@@ -42,29 +42,28 @@ def time_out(firstname, lastname): # time out inputting data into database
 if __name__ == '__main__': # Run the code using app.py name
     db_create()
 
-    while True: # Selecting the operation which the user is requesting to input their name
-        print("Choose an option:")
-        print("1. Sign In")
-        print("2. Sign Out")
-        print("3. Exit")
 
-        choice = input("Enter your choice (1, 2, or 3): ")
+    if len(sys.argv) == 2:
+        choice = sys.argv[1]
+    else:
+        choice = input("Choose an option (1, 2, or 3): ")
 
-        if choice == '1': # signing in option
-            firstname = input("Enter your first name: ")
-            lastname = input("Enter your last name: ")
-            time_in(firstname, lastname)
-            print("Sign-In recorded.")
+    if choice == '1':
+        firstname = input("Enter your first name: ")
+        lastname = input("Enter your last name: ")
+        time_in(firstname, lastname)
+        print("Sign-In recorded.")
 
-        elif choice == '2': #signing out option
-            firstname = input("Enter your first name: ")
-            lastname = input("Enter your last name: ")
-            time_out(firstname, lastname)
-            print("Sign-Out recorded.")
-
-        elif choice == '3': # exiting the operation
-            print("Exiting...")
-            break  # Exit the loop and end the program
+    elif choice == '2':
+        firstname = input("Enter your first name: ")
+        lastname = input("Enter your last name: ")
+        time_out(firstname, lastname)
+        print("Sign-Out recorded.")
+    
+    elif choice == '3':
+        print("Exiting...")
+        sys.exit(0)
         
-        else:
-            print("Invalid choice. Please enter either '1', '2', or '3'.")
+    else:
+        print("Invalid choice. Please enter either '1', '2', or '3'.")
+        sys.exit(1)
