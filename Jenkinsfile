@@ -13,7 +13,7 @@ pipeline{
         stage('Running application'){
             steps {
                 //Run the application
-                sh '. venv/bin/activate && python3 app.py'
+                sh '. venv/bin/activate && python3 app.py & 3'
             }
         }
 
