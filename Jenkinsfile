@@ -16,6 +16,12 @@ pipeline{
                 sh '. venv/bin/activate && python3 app.py 3'
             }
         }
+        stage('Testing'){
+            steps{
+                //Run tests
+                sh '. venv/bin/activate && pytest test_app.py'
+            }
+        }
 
         stage('Cleanup') {
             steps {
