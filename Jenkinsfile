@@ -19,6 +19,7 @@ pipeline{
         stage('Testing'){
             steps{
                 //Run tests
+                sh '. venv/bin/activate && apt install pytest'
                 sh '. venv/bin/activate && pytest test_app.py'
             }
         }
