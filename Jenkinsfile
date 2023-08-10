@@ -1,6 +1,6 @@
 pipeline{
     agent any
-
+// Create stage to build and run the application
     stages{
         stage('Build and Run') {
             steps {
