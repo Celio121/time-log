@@ -20,7 +20,7 @@ pipeline{
         stage('Cleanup') {
             steps {
                 // Deactivate the virtual environment and clean up
-                sh 'deactivate'
+                sh '. venv/bin/activate && deactivate'
                 sh 'rm -rf venv'
             }
         }
